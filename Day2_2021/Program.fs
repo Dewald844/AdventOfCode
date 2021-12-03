@@ -7,8 +7,8 @@ module Move =
   let fromString (s,int) =
     match s, int with 
     | "forward", x -> Forward x
-    | "up", x      -> Up x
-    | "down", x    -> Down x
+    | "up"     , x -> Up      x
+    | "down"   , x -> Down    x
     | _ -> failwith "Unexpected input"
     
 let inputLines =

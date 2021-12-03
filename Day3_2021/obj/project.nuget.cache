@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "AYiMeDXeg9/+zuusBUtk0tRcpu+vGCFHmbjD2s7KkgzdFx/87ap9yJRpfPrZolkEWGkr/f+HNMpzPTvOPF92CQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Dewald Haasbroek\\RiderProjects\\AdventOfCode\\AdventOfCode\\Day3_2021\\Day3_2021.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Dewald Haasbroek\\.nuget\\packages\\fsharp.core\\5.0.0\\fsharp.core.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
