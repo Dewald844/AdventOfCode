@@ -1,6 +1,4 @@
-
 let sampleInput = System.IO.File.ReadLines "./input.txt" |> Seq.toList
-// power  = gamma * epsilon
 
 let rec oxygenGenerator (inputList : List<string>) (counter : int) =
   if counter < 12 && inputList.Length > 1 then
