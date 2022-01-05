@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "AYiMeDXeg9/+zuusBUtk0tRcpu+vGCFHmbjD2s7KkgzdFx/87ap9yJRpfPrZolkEWGkr/f+HNMpzPTvOPF92CQ==",
+  "dgSpecHash": "SNUbk4tIryFOoo1fxxEZYI3XOTxN6jncVGHHewYuLO8KZy8+QvKukroux8RtRCaYi5pdeeUef6Bxwr+m1ECyOg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Dewald Haasbroek\\RiderProjects\\AdventOfCode\\AdventOfCode\\Day3_2021\\Day3_2021.fsproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Dewald Haasbroek\\.nuget\\packages\\fsharp.core\\5.0.0\\fsharp.core.5.0.0.nupkg.sha512"
+    "C:\\Users\\Dewald Haasbroek\\.nuget\\packages\\fsharp.core\\6.0.1\\fsharp.core.6.0.1.nupkg.sha512",
+    "C:\\Users\\Dewald Haasbroek\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.13\\microsoft.netcore.app.host.win-x64.5.0.13.nupkg.sha512"
   ],
   "logs": []
 }
