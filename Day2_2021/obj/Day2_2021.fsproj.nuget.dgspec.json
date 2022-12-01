@@ -1,25 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Dewald Haasbroek\\RiderProjects\\AdventOfCode\\AdventOfCode\\Day2_2021\\Day2_2021.fsproj": {}
+    "/Users/dewaldhaasbroek/Code/AdventOfCode/Day2_2021/Day2_2021.fsproj": {}
   },
   "projects": {
-    "C:\\Users\\Dewald Haasbroek\\RiderProjects\\AdventOfCode\\AdventOfCode\\Day2_2021\\Day2_2021.fsproj": {
+    "/Users/dewaldhaasbroek/Code/AdventOfCode/Day2_2021/Day2_2021.fsproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Dewald Haasbroek\\RiderProjects\\AdventOfCode\\AdventOfCode\\Day2_2021\\Day2_2021.fsproj",
+        "projectUniqueName": "/Users/dewaldhaasbroek/Code/AdventOfCode/Day2_2021/Day2_2021.fsproj",
         "projectName": "Day2_2021",
-        "projectPath": "C:\\Users\\Dewald Haasbroek\\RiderProjects\\AdventOfCode\\AdventOfCode\\Day2_2021\\Day2_2021.fsproj",
-        "packagesPath": "C:\\Users\\Dewald Haasbroek\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Dewald Haasbroek\\RiderProjects\\AdventOfCode\\AdventOfCode\\Day2_2021\\obj\\",
+        "projectPath": "/Users/dewaldhaasbroek/Code/AdventOfCode/Day2_2021/Day2_2021.fsproj",
+        "packagesPath": "/Users/dewaldhaasbroek/.nuget/packages/",
+        "outputPath": "/Users/dewaldhaasbroek/Code/AdventOfCode/Day2_2021/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Dewald Haasbroek\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "/Users/dewaldhaasbroek/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net5.0"
         ],
         "sources": {
+          "/usr/local/share/dotnet/sdk/6.0.302/FSharp/library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -36,7 +37,7 @@
             "FSharp.Core": {
               "include": "Runtime, Compile, Build, Native, Analyzers, BuildTransitive",
               "target": "Package",
-              "version": "[6.0.1, )",
+              "version": "[6.0.5, )",
               "generatePathProperty": true
             }
           },
@@ -52,8 +53,16 @@
           "warn": true,
           "downloadDependencies": [
             {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[5.0.13, 5.0.13]"
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.osx-x64",
+              "version": "[5.0.17, 5.0.17]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[5.0.0, 5.0.0]"
             }
           ],
           "frameworkReferences": {
@@ -61,7 +70,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.302/RuntimeIdentifierGraph.json"
         }
       }
     }

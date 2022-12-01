@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "SNUbk4tIryFOoo1fxxEZYI3XOTxN6jncVGHHewYuLO8KZy8+QvKukroux8RtRCaYi5pdeeUef6Bxwr+m1ECyOg==",
+  "dgSpecHash": "SdEeEX+s1pYM6GLF6PkGl5oCva4aT9iV2jdYvywdaAjucsRzLq65oQ8vZUmhhtULutP+8wfLBxSgAqvtrEADQw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Dewald Haasbroek\\RiderProjects\\AdventOfCode\\AdventOfCode\\Day3_2021\\Day3_2021.fsproj",
+  "projectFilePath": "/Users/dewaldhaasbroek/Code/AdventOfCode/Day3_2021/Day3_2021.fsproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Dewald Haasbroek\\.nuget\\packages\\fsharp.core\\6.0.1\\fsharp.core.6.0.1.nupkg.sha512",
-    "C:\\Users\\Dewald Haasbroek\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.13\\microsoft.netcore.app.host.win-x64.5.0.13.nupkg.sha512"
+    "/Users/dewaldhaasbroek/.nuget/packages/fsharp.core/6.0.5/fsharp.core.6.0.5.nupkg.sha512",
+    "/Users/dewaldhaasbroek/.nuget/packages/microsoft.netcore.app.ref/5.0.0/microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
+    "/Users/dewaldhaasbroek/.nuget/packages/microsoft.aspnetcore.app.ref/5.0.0/microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "/Users/dewaldhaasbroek/.nuget/packages/microsoft.netcore.app.host.osx-x64/5.0.17/microsoft.netcore.app.host.osx-x64.5.0.17.nupkg.sha512"
   ],
   "logs": []
 }
