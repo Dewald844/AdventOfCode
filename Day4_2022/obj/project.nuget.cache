@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "sVXxGDmDoK2JrhoI0sbQPX+dcuBEsXHUzip5CQkfe7VdJ9o66EpVp2h8bIHPT4Ms8Rk30QjegfgEgXpzNuWW/w==",
+  "success": true,
+  "projectFilePath": "/Users/dewaldhaasbroek/Code/AdventOfCode/Day4_2022/Day4_2022.fsproj",
+  "expectedPackageFiles": [
+    "/Users/dewaldhaasbroek/.nuget/packages/fsharp.core/6.0.5/fsharp.core.6.0.5.nupkg.sha512"
+  ],
+  "logs": []
+}
