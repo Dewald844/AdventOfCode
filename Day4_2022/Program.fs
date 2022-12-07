@@ -14,7 +14,7 @@ let overlaps (range1: SectionRange) (range2: SectionRange) =
 let inputL () =
    System.IO.File.ReadLines("../../../input.txt") |> List.ofSeq
 
-let main1 () =
+let part_1 () =
     let result =
         inputL ()
         |> List.map (fun s ->
@@ -26,7 +26,7 @@ let main1 () =
 
     printfn $"There are %d{result} pairs where one range fully contains the other."
 
-let main2 () =
+let part_2 () =
     let result =
         inputL ()
         |> List.map (fun s ->
@@ -36,7 +36,7 @@ let main2 () =
         |> List.filter id
         |> List.length
 
-    printfn $"There are %d{result} pairs where one range fully overlaps each other."
+    printfn $"There are %d{result} pairs where they fully overlaps each other."
 
-main1 ()
-main2 ()
+part_1 ()
+part_2 ()
