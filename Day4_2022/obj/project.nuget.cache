@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "sVXxGDmDoK2JrhoI0sbQPX+dcuBEsXHUzip5CQkfe7VdJ9o66EpVp2h8bIHPT4Ms8Rk30QjegfgEgXpzNuWW/w==",
+  "dgSpecHash": "OtxsYGQWqiHo5Fz0RIgklCTT5VvjcX9ej2cG1KBxfk5O9L/3elrlSzl4sxgAXymIWZkaHmw10LOGFRuI6d5X2Q==",
   "success": true,
   "projectFilePath": "/Users/dewaldhaasbroek/Code/AdventOfCode/Day4_2022/Day4_2022.fsproj",
   "expectedPackageFiles": [
-    "/Users/dewaldhaasbroek/.nuget/packages/fsharp.core/6.0.5/fsharp.core.6.0.5.nupkg.sha512"
+    "/Users/dewaldhaasbroek/.nuget/packages/fsharp.core/8.0.100/fsharp.core.8.0.100.nupkg.sha512",
+    "/Users/dewaldhaasbroek/.nuget/packages/microsoft.netcore.app.ref/6.0.25/microsoft.netcore.app.ref.6.0.25.nupkg.sha512",
+    "/Users/dewaldhaasbroek/.nuget/packages/microsoft.aspnetcore.app.ref/6.0.25/microsoft.aspnetcore.app.ref.6.0.25.nupkg.sha512",
+    "/Users/dewaldhaasbroek/.nuget/packages/microsoft.netcore.app.host.osx-arm64/6.0.25/microsoft.netcore.app.host.osx-arm64.6.0.25.nupkg.sha512"
   ],
   "logs": []
 }
