@@ -89,7 +89,10 @@ let part2Test =
    getNumForPartTwo test2
    |> List.sum
 
+printf "==============================\n"
 printf $"Part 1 test = {(getNumForPartOne test) |> List.sum}\n"
 printf $"Part 1 = {part1}\n"
-printf $"Part 2 = {part2 ()}\n"
+printf "==============================\n"
 printf $"Part 2 test = {part2Test}\n"
+printf $"Part 2 = {part2 ()}\n"
+printf "==============================\n"
