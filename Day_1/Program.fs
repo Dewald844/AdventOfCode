@@ -31,7 +31,7 @@ let getNumForPartOne (inputL : List<string>) : List<int> =
       |> int
    )
 
-let part1 =
+let part1 () =
    getNumForPartOne inputL
    |> List.sum
 
@@ -52,6 +52,12 @@ let extraction (input : string) =
       |> Seq.map (fun m -> m.Value)
       |> Seq.toArray
 
+   let revMatches =
+      Regex.Matches(input, regex, RegexOptions.RightToLeft)
+      |> Seq.cast<Match>
+      |> Seq.map (fun m -> m.Value)
+      |> Seq.toArray
+
    let firstNum =
       match wordToInt |> Map.containsKey matches[0] with
       | true ->
@@ -61,38 +67,29 @@ let extraction (input : string) =
       | false -> matches[0]
 
    let lastNum =
-      if matches.Length <= 1 then
-         ""
-      else
-         match wordToInt |> Map.containsKey matches[matches.Length - 1] with
-         | true ->
-            wordToInt
-            |> Map.find matches[matches.Length - 1]
-            |> string
-         | false ->
-            matches[matches.Length - 1]
+      match wordToInt |> Map.containsKey revMatches[0] with
+      | true ->
+         wordToInt
+         |> Map.find revMatches[0]
+         |> string
+      | false -> revMatches[0]
 
    [firstNum; lastNum]
+   |> String.concat ""
 
 let getNumForPartTwo (inputL : List<string>) : List<int> =
 
    inputL
    |> List.map extraction
-   |> List.map (String.concat "")
    |> List.map int
 
 let part2 () =
    getNumForPartTwo inputL
    |> List.sum
 
-let part2Test =
-   getNumForPartTwo test2
-   |> List.sum
 
 printf "==============================\n"
-printf $"Part 1 test = {(getNumForPartOne test) |> List.sum}\n"
-printf $"Part 1 = {part1}\n"
+printf $"Part 1 = {part1 ()}\n"
 printf "==============================\n"
-printf $"Part 2 test = {part2Test}\n"
 printf $"Part 2 = {part2 ()}\n"
 printf "==============================\n"
