@@ -62,6 +62,14 @@ let test2 = [
    "Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green"
 ]
 
+let getCubesFromString (color : string) (cubes : array<string>)  =
+   cubes
+   |> Array.filter (fun c -> (c.Split(" ").[1]) = color )
+   |> Array.map (fun x -> x.Split(" ")[0] |> int)
+   |> Array.sortByDescending id
+   |> Array.tryHead
+   |> Option.defaultValue 1
+
 let parseLine2 (line: string) =
    let cubes =
       line.Split(": ").[1].Trim().Split("; ")
@@ -71,34 +79,13 @@ let parseLine2 (line: string) =
 
    let lowestCubes =
 
-         let lowestRed   =
-            cubes
-            |> Array.filter (fun x -> x.Split(" ").[1] = "red")
-            |> Array.map (fun x -> x.Trim().Split(" ")[0] |> int)
-            |> Array.sortByDescending id
-            |> Array.tryHead
-            |> Option.defaultValue 1
-
-         let lowestGreen =
-            cubes
-            |> Array.filter (fun c -> (c.Split(" ").[1]) = "green" )
-            |> Array.map (fun x -> x.Split(" ")[0] |> int)
-            |> Array.sortByDescending id
-            |> Array.tryHead
-            |> Option.defaultValue 1
-
-         let lowestBlue  =
-            cubes
-            |> Array.filter (fun c -> (c.Split(" ").[1]) = "blue" )
-            |> Array.map (fun x -> x.Split(" ")[0] |> int)
-            |> Array.sortByDescending id
-            |> Array.tryHead
-            |> Option.defaultValue 1
+         let lowestRed = cubes |> getCubesFromString "red"
+         let lowestGreen = cubes |> getCubesFromString "green"
+         let lowestBlue = cubes |> getCubesFromString "blue"
 
          printf $"Lowest red: {lowestRed}, Lowest green: {lowestGreen}, Lowest blue: {lowestBlue}\n"
 
          (lowestRed, lowestGreen, lowestBlue)
-
 
    lowestCubes
    |> fun (r, g, b) -> r * g * b
