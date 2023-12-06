@@ -22,20 +22,23 @@ let test = [
    "Card 6: 31 18 13 56 72 | 74 77 10 23 35 67 36 11"
 ]
 
+let mapStringInputToNumbers (input : array<string>) : List<int> =
+   input
+   |> Array.map (fun x -> if x = "" then None else Some(int x))
+   |> Array.choose id
+   |> Array.map int
+   |> Array.toList
+
 let parseInputString (s : string) =
    let cardNumber = ((s.Split(":")[0]).Split("Card")[1]).Trim() |> int
    let winningNumbers =
+
       ((s.Split(":")[1]).Split("|")[0]).Split(" ")
-      |> Array.map (fun x -> if x = "" then None else Some(int x))
-      |> Array.choose id
-      |> Array.map int
-      |> Array.toList
+      |> mapStringInputToNumbers
+
    let scratchNumbers =
       ((s.Split(":")[1]).Split("|")[1]).Split(" ")
-      |> Array.map (fun x -> if x = "" then None else Some(int x))
-      |> Array.choose id
-      |> Array.map int
-      |> Array.toList
+      |> mapStringInputToNumbers
 
    { CardNumber = cardNumber; WinningNumbers = winningNumbers; ScratchNumbers = scratchNumbers }
 
