@@ -6,29 +6,58 @@
 8 6 4 4 1
 1 3 6 7 9""".Split("\n")
 
-let input = System.IO.File.ReadAllLines "./input.txt"
+let inputL = System.IO.File.ReadAllLines "./input.txt"
 
 let prepareInput (input : string array) =
    input
    |> Array.map (fun x -> x.Split(" ") |> Array.map int |> List.ofArray)
-   |> Array.map (fun a -> (a[0], a[1], a[2], a[3], a[4]))
+   |> Array.toList
+
+let determineSafety (levelL : List<int>) =
+   let isPositiveDiff () = (levelL[0] - levelL[1]) > 0 * -1
+   levelL
+   |> List.mapi (fun i x ->
+      if i = 0 then true
+      else
+         let r = levelL[i - 1] - x
+         match isPositiveDiff () with
+         | true -> r > 0 && r <= 3
+         | false -> r < 0 && r >= -3
+      )
+   |> List.exists (fun x -> x = false)
+
+let determineSafetyWithDampener (levelL : List<int>) : bool =
+
+   let rec removeOneLevel (levelL : List<int>) counter length =
+      if counter < length then
+         let isUnsafe = List.removeAt counter levelL |> determineSafety
+         if isUnsafe then
+            removeOneLevel levelL (counter + 1) length
+         else false
+      else true
+
+   if levelL |> determineSafety then
+      removeOneLevel levelL 0 (List.length levelL)
+   else false
 
 
-let determineSafety (a, b, c, d, e) =
-   let ab = a - b
-   let bc = b - c
-   let cd = c - d
-   let de = d - e
-
-   if ab > 0 && ab <= 2 then
-      bc <= 2 && cd <= 2 && de <= 2
-   elif ab < 0 && ab >= -2 then
-      bc >= -2 && cd >= -2 && de >= -2
-   else
-      false
+let result1 input =
+   input
+   |> prepareInput
+   |> List.map determineSafety
+   |> List.filter (fun x -> x = false)
+   |> List.length
 
 
-let result1 input = input |> prepareInput |> Array.filter determineSafety |> Array.length
+let result2 input =
+   input
+   |> prepareInput
+   |> List.map determineSafetyWithDampener
+   |> List.filter (fun x -> x = false)
+   |> List.length
+
 
 // Part 1
-result1 input |> printfn "%A"
+result1 testInput |> printfn "Part 1 : %A"
+// Part 2
+result2 inputL |> printfn "Part 2 : %A"
