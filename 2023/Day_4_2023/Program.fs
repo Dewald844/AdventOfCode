@@ -95,11 +95,11 @@ let evolveState (state : (int * int) array) (card : Card) =
 
 let calculateNumberOfScratchCards cards =
 
-    let state = cards |> Array.map (fun c -> (c.CardNumber, 1))
+   let state = cards |> Array.map (fun c -> (c.CardNumber, 1))
 
-    (state, cards)
-    ||> Array.fold evolveState
-    |> Array.sumBy (fun row -> row |> snd)
+   (state, cards)
+   ||> Array.fold evolveState
+   |> Array.sumBy (fun row -> row |> snd)
 
 let part2 =
    inputL

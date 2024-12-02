@@ -14,13 +14,12 @@ let prepareInput (input : string array) =
    |> Array.toList
 
 let determineSafety (levelL : List<int>) =
-   let isPositiveDiff () = (levelL[0] - levelL[1]) > 0 * -1
    levelL
    |> List.mapi (fun i x ->
       if i = 0 then true
       else
          let r = levelL[i - 1] - x
-         match isPositiveDiff () with
+         match (levelL[0] - levelL[1]) > 0 * -1 with
          | true -> r > 0 && r <= 3
          | false -> r < 0 && r >= -3
       )
@@ -40,14 +39,12 @@ let determineSafetyWithDampener (levelL : List<int>) : bool =
       removeOneLevel levelL 0 (List.length levelL)
    else false
 
-
 let result1 input =
    input
    |> prepareInput
    |> List.map determineSafety
    |> List.filter (fun x -> x = false)
    |> List.length
-
 
 let result2 input =
    input
