@@ -61,7 +61,9 @@ let rec findPath (matrix : array<array<char>>) (position : Position) (direction 
          nextPosition :: findPath matrix nextPosition direction.next
       | _ -> newPosition :: findPath matrix newPosition direction
 
-let rec checkForLoop (matrix : array<array<char>>) (position : Position) (direction : Direction) (visited : List<Position * Direction>) =
+open System.Collections.Generic
+
+let rec checkForLoop (matrix : array<array<char>>) (position : Position) (direction : Direction) (visited : HashSet<Position * Direction>) =
    let newPosition = position.Move direction
    if newPosition.x < 0 || newPosition.x >= matrix[0].Length || newPosition.y < 0 || newPosition.y >= matrix.Length then
       OutOfBounds
@@ -69,11 +71,14 @@ let rec checkForLoop (matrix : array<array<char>>) (position : Position) (direct
       match matrix[newPosition.y][newPosition.x] with
       | '#' ->
          let nextPosition = position.Move direction.next
-         if visited |> List.exists (fun (p, d) -> p.x = nextPosition.x && p.y = nextPosition.y && d = direction.next) then
+         if visited.Contains((nextPosition, direction.next)) then
             Loop
          else
-            checkForLoop matrix nextPosition direction.next ((nextPosition, direction) :: visited)
-      | _ -> checkForLoop matrix newPosition direction visited
+            visited.Add((nextPosition, direction.next)) |> ignore
+            checkForLoop matrix nextPosition direction.next visited
+      | _ ->
+         visited.Add((newPosition, direction)) |> ignore
+         checkForLoop matrix newPosition direction visited
 
 let placeObstacle (matrix : array<array<char>>) (position : Position) =
    matrix
@@ -90,17 +95,11 @@ let calculateNextObstaclePos (currentPos : Position) (matrix : array<array<char>
    else
       { currentPos with x = 0; y = currentPos.y + 1 }
 
-let resultPart1 (input : string) =
-   let matrix = parseInput input
-   let startingPosition = findStartingPosition matrix
-   let path = findPath matrix startingPosition Up
-   printfn $"Part 1 : {path |> List.append [startingPosition] |> List.distinctBy (fun p -> p.y, p.x) |> List.length}"
-
 let rec placeAndFindLoops (obstaclePos : Position) (currentPos : Position) (direction : Direction) (matrix : array<array<char>>) loopL =
    let newMatrix = placeObstacle matrix obstaclePos
    let nextObstaclePos = calculateNextObstaclePos obstaclePos matrix
    if nextObstaclePos.y < matrix.Length then
-      let loop = checkForLoop newMatrix currentPos direction [currentPos, direction]
+      let loop = checkForLoop newMatrix currentPos direction (HashSet<Position * Direction>([currentPos, direction]))
       match loop with
       | Loop ->
          let newLoopL = loopL @ [obstaclePos]
@@ -110,6 +109,11 @@ let rec placeAndFindLoops (obstaclePos : Position) (currentPos : Position) (dire
    else
       loopL
 
+let resultPart1 (input : string) =
+   let matrix = parseInput input
+   let startingPosition = findStartingPosition matrix
+   let path = findPath matrix startingPosition Up
+   printfn $"Part 1 : {path |> List.append [startingPosition] |> List.distinctBy (fun p -> p.y, p.x) |> List.length}"
 
 let resultPart2 (input : string) =
    let matrix = parseInput input
