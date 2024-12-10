@@ -1,5 +1,4 @@
-﻿open System
-
+﻿
 let testInput = """190: 10 19
 3267: 81 40 27
 83: 17 5
