@@ -11,7 +11,6 @@
 ............
 ............"""
 
-
 let inputString = System.IO.File.ReadAllText "./input.txt"
 
 let createMatrix (input : string) =
